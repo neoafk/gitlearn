@@ -5,9 +5,7 @@ import pymongo
 import os
 import urllib.parse
 import configparser
-#from urllib import parse
-#import requests
-#import urllib
+
 
 
 app = Flask(__name__)
