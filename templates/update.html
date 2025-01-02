@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>{{t}}</title>
+	</head>
+	<style>	
+		h1{
+			font-family:"Arial Black", Gadget, sans-serif;
+		}
+		body{
+			background-color:white;
+		}
+	</style>
+<body>
+	<h1>{{h}}</h1>
+	<hr>
+	<h3>Update Item </h3>
+	<form action="/action3" method="POST">
+	{% for smzdm in smzdms %}
+		Unique Object ID : {{ smzdm['_id'] }}<br/>
+	<input type="text" name="_id" value="{{ smzdm['_id'] }}" hidden>
+
+	<table>
+	<tr>
+	<td>物品</td><td> : </td><td><input type="text" name="name" value="{{ smzdm['name'] }}" placeholder="{{ smzdm['name'] }}"></td>
+	</tr>
+	<tr>
+	<td>描述</td><td> : </td><td><input type="text" name="desc" value="{{ smzdm['desc'] }}"  placeholder="{{ smzdm['desc'] }}"></td>
+	</tr>
+	<tr>
+	<td>关键词</td><td> : </td><td><input type="text" name="keyword" value="{{ smzdm['keyword'] }}" placeholder="{{ smzdm['keyword'] }}"></td>
+	</tr>
+	<tr>
+	
+	<td>期望价格</td><td> : </td><td><input type="text" name="desire_price" value="{{ smzdm['desire_price'] }}" placeholder="{{ smzdm['desire_price'] }}"></td>
+	</tr>
+	</table>
+	{% endfor %}
+		<button type="submit"> Update Task </button>
+		<br/>
+	</form>
+	<a href="/">Return to TaskList</a>
+</body>
+</html>
+
+
